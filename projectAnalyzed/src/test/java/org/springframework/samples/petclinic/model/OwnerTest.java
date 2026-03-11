@@ -50,8 +50,7 @@ public class OwnerTest {
         assertTrue(owner.getPets().contains(pet));
     }
 
-    @Test
-        // No removePet method exists; test omitted.
+    // No removePet method exists; test omitted.
 
     @Test
     public void testGetAddressNull() {
