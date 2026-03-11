@@ -115,16 +115,10 @@ public class Owner extends Person {
      * @return true if pet name is already in use
      */
     public Pet getPet(String name, boolean ignoreNew) {
-        if (name == null || name.isEmpty()) {
-            return null;
-        }
         name = name.toLowerCase();
         for (Pet pet : getPetsInternal()) {
             if (!ignoreNew || !pet.isNew()) {
                 String compName = pet.getName();
-                if (compName == null || compName.isEmpty()) {
-                    continue;
-                }
                 compName = compName.toLowerCase();
                 if (compName.equals(name)) {
                     return pet;
