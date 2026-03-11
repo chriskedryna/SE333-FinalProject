@@ -1,0 +1,14 @@
+## Technical Documentation:
+
+- The MCP tools I implemented, along with the JaCoCo parser that was given to us, was a SpotBugs parser for static analysis. I also used some of the GitHub MCP tools, such as create_or_update_file, create_branch, and create_pull_request.
+- To setup, all you really need are my MCP server + tools and GitHub MCP server + tools. The pom.xml file is already configured in my case, but it should, theoretically, be able to be configured by the AI Agent if implementations are missing.
+- Troubleshooting can be found in the tester.prompt.md file.
+
+## Reflection Report
+
+This project was very interesting because I gained hands-on experience with using AI agents. Before this course, I had no experience with software testing and very little experience coding with AI agents, so combining the two was very cool for me. Overall, I found out how frustrating it is to work with AI agents.
+My methodology was to build a prompt slowly over time, slightly increasing the load and costs that the AI agents had to bear. This lined up well with how the project instructions were structured. For example, I first created a 20-line java class to test my tools as well as GitHub's. Slowly, I added more code and transitioned to the petclinic project. Even then, I decided that it wouldn't be feasible to write tests for the entire source code: there's too much and I frequently ran out of tokens in the context window. In an effort to showcase a real working product, I prompted the agent to only write tests for the Owner class. Through this process, I had to make adjustments to my prompt so that it wouldn't be too expensive (timewise or tokenwise).
+It took a really long time to get a working product on a large codebase like the petclinic. AI-assisted development was a fascinating sector of software development to enter into because I always hear online that this is where the field is headed. If you don't know how to code with AI, lots of people will say you won't do very well. My view on it is that AI made this project run 100x smoother than if I were trying to do this all by myself. It could run test cases, create feature branches, and create pull requests really easily and much quicker than if a single person or even group of people were assigned the same task. However, the idea of prompt engineering comes into play. If you don't give the AI Agent enough context, it can get lost or not know what to do.
+In terms of things I learned, I definitely learned context engineering and patience. I also learned about GitHub's vast suite of MCP server tools which I am open to using in the future.
+
+The prompt I used to start the execution varied a lot. It was really frustrating at times, because sometimes the agent could infer and do the right thing without me explicitly saying, otherwise it couldn't.
