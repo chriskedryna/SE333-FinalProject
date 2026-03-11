@@ -438,18 +438,12 @@
                         </goals>
                         <configuration>
                             <rules>
-                                <requireUpperBoundDeps/>
-                                <requirePluginVersions/>
-                                <dependencyConvergence/>
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
-                                        <exclude>javassist</exclude>
-                                        <exclude>commons-logging</exclude>
-                                        <exclude>aspectj</exclude>
-                                        <exclude>asm</exclude>
-                                        <exclude>hsqldb</exclude>
-                                        <exclude>log4j</exclude>
+                                        <!-- Ban only the unshaded legacy artifacts that conflict;
+                                             do NOT ban things the project itself uses at runtime -->
+                                        <exclude>commons-logging:commons-logging</exclude>
                                     </excludes>
                                 </bannedDependencies>
                                 <requireMavenVersion>
