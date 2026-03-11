@@ -19,7 +19,7 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlElement;
+// JAXB annotation removed for Java 17 compatibility
 import java.util.*;
 
 /**
@@ -51,7 +51,6 @@ public class Vet extends Person {
         return this.specialties;
     }
 
-    @XmlElement
     public List<Specialty> getSpecialties() {
         List<Specialty> sortedSpecs = new ArrayList<Specialty>(getSpecialtiesInternal());
         PropertyComparator.sort(sortedSpecs, new MutableSortDefinition("name", true, true));
